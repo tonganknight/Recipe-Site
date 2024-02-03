@@ -1,0 +1,15 @@
+.title{
+    padding-top: 22px;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+}
+
+.titleDescription{
+    padding-top: 15px;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+}

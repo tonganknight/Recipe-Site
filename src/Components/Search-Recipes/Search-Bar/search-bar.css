@@ -1,0 +1,25 @@
+.searchBar{
+    margin-left: 450px;
+    padding-top: 25px;
+    width: 45%;
+}
+
+#bootstrap-overrides :hover{
+    background-image:  linear-gradient( 109.6deg,  rgba(61,131,97,1) 11.2%, rgba(28,103,88,1) 91.1% );
+}
+
+.bs-btn-bg{
+    background-image:  linear-gradient( 109.6deg,  rgba(61,131,97,1) 11.2%, rgba(28,103,88,1) 91.1% );
+    color: white;
+}
+
+.bs-btn-bg:hover{
+    background-image:  linear-gradient( rgba(28,103,88,1) 11.2%, rgba(61,131,97,1) 91.1%);
+    color: white;
+}
+
+.form-control:focus{
+    border-color: rgba(28,103,88,1);
+    box-shadow:  0, 0, 8px, rgb(61, 131, 96);
+    outline: 0px;
+}
