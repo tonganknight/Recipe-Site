@@ -10,8 +10,8 @@ const SearchRecipes = () => {
   return (
     <div>
       <SearchTitle />
-      <SearchBar filter={"test"} />
       <RecipeFilter />
+      <SearchBar filter={"test"} />
     </div>
   );
 };

@@ -1,8 +1,8 @@
 
  export function updateFilters(filterButtonCount: number) {
+  
 
 //Controls the show filter button on each click
-
     function iterationCount(){
       if(filterButtonCount < 1){
         return 9;
@@ -26,7 +26,7 @@
       for (let i = 0; i < iteration!; i++) {
         const element = document.getElementById(`${i}`);
         element?.classList.remove("form-check", "form-switch", "input-items", "invisible");
-        element?.classList.add("form-check", "form-switch", "input-items");
+        element?.classList.add("form-check", "form-switch", "input-items", "display");
       }
       if (iteration === 9){
         if (filterButtonCount < 1  && iteration === 9) {
@@ -39,7 +39,7 @@
       for (let i = 0; i < iteration!; i++) {
         const element = document.getElementById(`${i}`);
         element?.classList.remove("form-check", "form-switch", "input-items", "invisible");
-        element?.classList.add("form-check", "form-switch", "input-items");
+        element?.classList.add("form-check", "form-switch", "input-items", "display");
       }
     
       if (iteration === 18) {
@@ -54,7 +54,7 @@
       for (let i = 0; i < iteration!; i++) {
         const element = document.getElementById(`${i}`);
         element?.classList.remove("form-check", "form-switch", "input-items", "invisible");
-        element?.classList.add("form-check", "form-switch", "input-items");
+        element?.classList.add("form-check", "form-switch", "input-items", "display");
       }
       if (iteration === 34){
         if (filterButtonCount === 3 && iteration === 34) {
@@ -65,7 +65,8 @@
     if(filterButtonCount === 4){
       for (let i = 0; i < iteration!; i++) {
         const element = document.getElementById(`${i}`);
-        element?.classList.add("invisible");
+        element?.classList.add("displayNone");
+        element?.classList.remove("display");
       }
       if (iteration === 34){
         
