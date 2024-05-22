@@ -32,14 +32,13 @@
    justify-content: center;
    height: 650px;
    width: 100%;
-   background-image: url('../../../public//Assets//Images/Spinach.jpg');
+   background-image: url('../../../public//Assets//Images/PeperParty.gif');
    background-size: cover;
    background-position-y: center;
 }
 
 .BannerBackground{
    align-items: center;
-   background-color: white;
    height:70%;
    width: 55%;
 }

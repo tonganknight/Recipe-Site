@@ -27,7 +27,10 @@
 .carouselArrowFlex{
     position: absolute;
     width: 100%;
-    height: 300px;
+    height: 215px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 0 0 40px 40px;
+    color: white;
 }
 
 .carouselText{
@@ -35,5 +38,6 @@
     width: 85%;
     height: 90%;
     text-align: center;
-
+    color: white;
 }
+

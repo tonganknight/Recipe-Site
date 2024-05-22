@@ -4,6 +4,11 @@
     width: 45%;
 }
 
+.searchBarMobile {
+    padding-top: 25px;
+    width: 45%;
+}
+
 #bootstrap-overrides :hover{
     background-image:  linear-gradient( 109.6deg,  rgba(61,131,97,1) 11.2%, rgba(28,103,88,1) 91.1% );
 }
