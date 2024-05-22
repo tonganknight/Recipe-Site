@@ -13,3 +13,8 @@
     width: 80%;
     margin-left: 10%;
 }
+
+.imageFelxMobile {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,1 @@
+export const textArray = ['Find', 'Inspire', 'Create', 'Cook', 'Eat', 'Enjoy', 'Share', 'Repeat']

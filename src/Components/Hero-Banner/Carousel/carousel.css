@@ -33,6 +33,10 @@
     color: white;
 }
 
+.displayNone{
+    display: none;
+}
+
 .carouselText{
     align-self: center;
     width: 85%;

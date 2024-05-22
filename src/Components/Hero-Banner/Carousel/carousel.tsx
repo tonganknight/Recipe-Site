@@ -1,7 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './carousel.css'
+import MobileScreen from '@/app/Hooks/Common/screen-size';
 
 const CarouselBanner = ({ bannerSlides }: { bannerSlides: string[] }) => {
+  const isMobile = MobileScreen()
   const mapSlides = bannerSlides.map((slide: string, index: number) => {
     const slideClass = index === 0 ? "carousel-item active" : "carousel-item";
     return (
@@ -12,11 +14,11 @@ const CarouselBanner = ({ bannerSlides }: { bannerSlides: string[] }) => {
   });
 
 return(
-<div id="carouselExample" className="carousel carousel-dark slide flexbox ">
+<div id="carouselExample" className={isMobile ? 'displayNone' : "carousel carousel-dark slide flexbox" }>
   <div className="carousel-inner carouselText">
   {mapSlides}
   </div>
-  <div className='carouselArrowFlex'>
+  <div className={isMobile ? 'displayNone' : 'carouselArrowFlex'}>
   <button className="carousel-control-prev  leftArrow" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span className="carousel-control-prev-icon arrows" aria-hidden="true"></span>
     <span className="arrows"></span>

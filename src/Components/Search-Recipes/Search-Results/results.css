@@ -1,0 +1,17 @@
+.cook-TitleFlex{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.collapseBar{
+    background-image:  linear-gradient( 109.6deg,  rgba(61,131,97,1) 11.2%, rgba(28,103,88,1) 91.1% ) !important;
+    background-color: transparent !important;
+    background-size: cover !important;
+    font-weight: bold;
+    color: white;
+}
+
+.accordion-button:not(.collapsed) {
+    text-decoration: underline;
+    color: white;
+}

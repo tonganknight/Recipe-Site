@@ -16,8 +16,8 @@ const HeroBanner = () => {
 
   return (
     <>
-        <div className="heroBackground">
-          <div className="BannerBackground">
+        <div className={isMobile ? 'heroBackgroundMobile' : 'heroBackground'}>
+          <div className={'banner-background'}>
             <BannerTitle />
             <CarouselBanner bannerSlides={slideData} />
           </div>

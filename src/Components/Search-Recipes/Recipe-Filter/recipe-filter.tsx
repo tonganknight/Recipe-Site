@@ -3,9 +3,11 @@ import { useMemo, useState } from "react";
 import { updateFilters } from "@/Functions/search-filter";
 import EdamonFilters from "@/Const/Edamon-Filters";
 import "./recipe-filter.css";
+import MobileScreen from "@/app/Hooks/Common/screen-size";
 
 export const RecipeFilter = () => {
   const [filterButtonCount, setFilterButtonCount] = useState(0);
+  const isMobile = MobileScreen();
 
   const handleFilterClick = () => {
     const updateFilterButtonCount = updateFilters(filterButtonCount);
@@ -50,7 +52,7 @@ export const RecipeFilter = () => {
 
   return (
     <div className="parentFlex">
-      <button onClick={handleFilterClick} className="filterButton">
+      <button onClick={handleFilterClick} className={isMobile ? 'filterButtonMobile' : 'filterButton'}>
         {showFilterButton}
       </button>
       <div className="recipe-flex-active">
