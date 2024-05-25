@@ -12,13 +12,17 @@ export const SearchResults = (returnedData: any) => {
     (data: any, index: any) => {
       const foodPic = data.recipe.image;
       const cookName = data.recipe.source;
+      const onClick = () => {
+        window.open(`${returnedData?.returnedData?.hits[index]?.recipe.url}`);
+      };
+
       console.log("foodPic", foodPic);
       return (
-        <div className="accordion" id="accordionExample">
+        <div className="accordion accordion-flush " id="accordionExample">
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingOne">
               <button
-                className="accordion-button collapseBar"
+                className="accordion-button collapseBar collapsed accordion-button.collapsed  "
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target={"#collapse" + index}
@@ -30,7 +34,7 @@ export const SearchResults = (returnedData: any) => {
             </h2>
             <div
               id={"collapse" + index}
-              className="accordion-collapse collapse show"
+              className="accordion-collapse collapse"
               aria-labelledby="headingOne"
               data-bs-parent="#accordionExample"
             >
@@ -43,6 +47,19 @@ export const SearchResults = (returnedData: any) => {
                 ></Image>
                 <div className="cook-TitleFlex">
                   <strong>{`A Creation By ${cookName}`}</strong>
+                </div>
+
+                {data.recipe.ingredientLines.map((ingredient: any) => {
+                  return (
+                    <ul className="list-group">
+                      <li className="list-group-item">{ingredient}</li>
+                    </ul>
+                  );
+                })}
+                <div className="goLinkFlex">
+                  <button onClick={onClick} className="goToLink">
+                    Go to Recipe
+                  </button>
                 </div>
               </div>
             </div>

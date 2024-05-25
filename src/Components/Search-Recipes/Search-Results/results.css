@@ -15,3 +15,33 @@
     text-decoration: underline;
     color: white;
 }
+
+.accordion-button.collapsed {
+    text-decoration: none;
+    color: white;
+    background: white;
+}
+.accordion-button.collapsed::before {
+    background-color: white;
+}
+
+  .accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.goLinkFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5%;
+
+}
+
+.goToLink { 
+    border: none;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid rgba(61,131,97,1);
+    color: rgba(61,131,97,1);
+    border-radius: 10px;
+}
