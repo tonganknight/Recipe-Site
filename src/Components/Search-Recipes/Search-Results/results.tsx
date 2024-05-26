@@ -15,26 +15,36 @@ export const SearchResults = (returnedData: any) => {
       const caloriesAmount = data.recipe.calories;
       const caloriesLabel = "Calories";
       const nutrition = data.recipe.totalNutrients;
-      // const nutritonnArray = [];
-      // nutritonnArray.push(nutrition);
-      // console.log("nutritonnArray", nutritonnArray[0]);
+      delete nutrition["CHOCDF.net"];
+      delete nutrition.FOLDFE;
       const onClick = () => {
         window.open(`${returnedData?.returnedData?.hits[index]?.recipe.url}`);
       };
-      const mapNutrition = Object.entries(nutrition).map(
+      const mapNutritionLabel = Object.entries(nutrition).map(
         ([key, nutrient], index) => {
+          return <li className="list-group-item">{(nutrient as any).label}</li>;
+        }
+      );
+
+      const mapNutritionValues = Object.entries(nutrition).map(
+        ([key, nutrient], index) => {
+          const nutrientValue = (nutrient as any).quantity;
+          const roundValue = Math.round(nutrientValue);
+          const unitValue = (nutrient as any).unit;
           return (
-            <div className="row" key={index}>
-              <div className="col">{(nutrient as any).label}</div>
-              <div className="col">{(nutrient as any).quantity}</div>
-            </div>
+            <li className="list-group-item">
+              {roundValue}
+              {unitValue}
+            </li>
           );
         }
       );
 
-      console.log("foodPic", foodPic);
       return (
-        <div className="accordion accordion-flush " id="accordionExample">
+        <div
+          className="accordion accordion-flush "
+          id={`accordionExample${index}`}
+        >
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingOne">
               <button
@@ -52,7 +62,7 @@ export const SearchResults = (returnedData: any) => {
               id={"collapse" + index}
               className="accordion-collapse collapse"
               aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample"
+              data-bs-parent={`#accordionExample${index}`}
             >
               <div className="accordion-body">
                 <Image
@@ -60,6 +70,8 @@ export const SearchResults = (returnedData: any) => {
                   height="250"
                   width="275"
                   alt={"Yumy food from the recipte"}
+                  className="
+                  imgRecipe"
                 ></Image>
                 <div className="cook-TitleFlex">
                   <strong>{`A Creation By ${cookName}`}</strong>
@@ -73,7 +85,7 @@ export const SearchResults = (returnedData: any) => {
                 })}
                 <div
                   className="accordion accordion-flush "
-                  id="accordionExample"
+                  id={`accordionExample${index}${index}`}
                 >
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
@@ -92,10 +104,17 @@ export const SearchResults = (returnedData: any) => {
                       id={`collapse2${index}`}
                       className="accordion-collapse collapse"
                       aria-labelledby="headingOne"
-                      data-bs-parent="#accordionExample"
+                      data-bs-parent={`#accordionExample${index}${index}`}
                     >
                       <div className="accordion-body">
-                        <div className="container">{mapNutrition}</div>
+                        <div className="container">
+                          <div className="NutritionFlxx">
+                            <ul className="list-group ">{mapNutritionLabel}</ul>
+                            <ul className="list-group ">
+                              {mapNutritionValues}
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
