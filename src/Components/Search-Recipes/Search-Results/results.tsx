@@ -22,7 +22,11 @@ export const SearchResults = (returnedData: any) => {
       };
       const mapNutritionLabel = Object.entries(nutrition).map(
         ([key, nutrient], index) => {
-          return <li className="list-group-item">{(nutrient as any).label}</li>;
+          return (
+            <li className="list-group-item" key={index}>
+              {(nutrient as any).label}
+            </li>
+          );
         }
       );
 
@@ -32,7 +36,7 @@ export const SearchResults = (returnedData: any) => {
           const roundValue = Math.round(nutrientValue);
           const unitValue = (nutrient as any).unit;
           return (
-            <li className="list-group-item">
+            <li className="list-group-item" key={index}>
               {roundValue}
               {unitValue}
             </li>
@@ -43,6 +47,7 @@ export const SearchResults = (returnedData: any) => {
       return (
         <div
           className="accordion accordion-flush "
+          key={index}
           id={`accordionExample${index}`}
         >
           <div className="accordion-item">
@@ -78,7 +83,7 @@ export const SearchResults = (returnedData: any) => {
                 </div>
                 {data.recipe.ingredientLines.map((ingredient: any) => {
                   return (
-                    <ul className="list-group">
+                    <ul className="list-group" key={index}>
                       <li className="list-group-item">{ingredient}</li>
                     </ul>
                   );
