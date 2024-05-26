@@ -1,0 +1,14 @@
+import { EdamonAPI } from "@/Enums";
+
+const searchRecipe = async (query: any): Promise<any> => {
+          const SingleCall = await fetch(EdamonAPI.search + query + EdamonAPI.appID + EdamonAPI.appKey).then((result: any) => {
+            const data = result.json();
+             console.log('Edamon call', result);
+            return data;
+           
+        });
+    //TODO destruct filtered data and make a call that adds all filters
+    return SingleCall;
+};
+
+export default searchRecipe;
