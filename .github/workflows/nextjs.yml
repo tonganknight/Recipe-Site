@@ -29,6 +29,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - save_cache:
+      key: dependency-cache-{{ checksum "yarn.lock" }}
+      paths:
+        - ./node_modules
+        - ./.next/cache
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
