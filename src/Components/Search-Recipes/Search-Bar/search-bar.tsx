@@ -23,7 +23,7 @@ const SearchBar = () => {
         className={
           isMobile
             ? "input-group mb-3 searchBarMobile"
-            : "input-group mb-3 seachBar"
+            : " seachBar input-group mb-3"
         }
       >
         <input

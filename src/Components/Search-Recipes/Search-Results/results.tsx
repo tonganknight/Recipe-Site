@@ -69,7 +69,7 @@ export const SearchResults = (returnedData: any) => {
               aria-labelledby="headingOne"
               data-bs-parent={`#accordionExample${index}`}
             >
-              <div className="accordion-body">
+              <div className="accordion-body acordion-Body-Flex">
                 <Image
                   src={`${foodPic}`}
                   height="250"
