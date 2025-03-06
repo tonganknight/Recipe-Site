@@ -1,37 +1,23 @@
 "use client";
 import { useMemo, useState } from "react";
-import { updateFilters } from "@/Functions/search-filter";
 import EdamonFilters from "@/Const/Edamon-Filters";
 import "./recipe-filter.css";
 import MobileScreen from "@/app/Hooks/Common/screen-size";
 
 export const RecipeFilter = () => {
-  const [filterButtonCount, setFilterButtonCount] = useState(0);
+  const [showButtonState, setShowButtonState] = useState(false);
   const isMobile = MobileScreen();
 
   const handleFilterClick = () => {
-    const updateFilterButtonCount = updateFilters(filterButtonCount);
-    setFilterButtonCount(updateFilterButtonCount!);
+    setShowButtonState((prev) => !prev);
   };
-
-  const showFilterButton = useMemo(() => {
-    if (filterButtonCount > 1 && filterButtonCount < 4) {
-      return "Show More";
-    }
-    if (filterButtonCount === 0) {
-      return "Show Filters";
-    }
-    if (filterButtonCount === 4) {
-      return "Hide Filters";
-    }
-  }, [filterButtonCount]);
 
   const mapFilters = EdamonFilters.map((item: any, index: number) => {
     return (
       <div
         id={`${index}`}
         key={index}
-        className="form-check form-switch input-items displayNone"
+        className="form-check form-switch input-items"
       >
         <input
           className="form-check-input"
@@ -52,12 +38,15 @@ export const RecipeFilter = () => {
 
   return (
     <div className="parentFlex">
-      <button onClick={handleFilterClick} className={isMobile ? 'filterButtonMobile' : 'filterButton'}>
-        {showFilterButton}
+      <button
+        onClick={handleFilterClick}
+        className={isMobile ? "filterButtonMobile" : "filterButton"}
+      >
+        {showButtonState ? "Hide Filters" : "Show Filters"}
       </button>
       <div className="recipe-flex-active">
         <div id="recipe-flex" className="recipe-flex">
-          {mapFilters}
+          {showButtonState ? mapFilters : null}
         </div>
       </div>
     </div>

@@ -17,11 +17,13 @@
 .leftArrow{
     padding-right: 70px;
     padding-bottom: 200px;
+    filter: invert(1); 
 }
 
 .rightArrow{
     padding-left: 70px;
     padding-bottom: 200px;
+    filter: invert(1); 
 }
 
 .carouselArrowFlex{
@@ -43,5 +45,9 @@
     height: 90%;
     text-align: center;
     color: white;
+}
+
+.carouselIndicatorButton {
+    filter: invert(1); 
 }
 
