@@ -7,7 +7,6 @@ const searchRecipe = async (query: any): Promise<any> => {
             return data;
            
         });
-    //TODO destruct filtered data and make a call that adds all filters
     return SingleCall;
 };
 
